@@ -1,0 +1,28 @@
+/* IMPORTAÇÂO DAS FONTES */
+@font-face {
+    font-family: "BubueloCleanProLigth";
+    src: url("../fonts/");
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.flex {
+    display: flex;
+}
+.centered {
+    justify-content: center;
+    align-items: center;
+}
+
+/* TOP */
+.top {
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+    height: 60px;
+    background-color: coral;
+}
