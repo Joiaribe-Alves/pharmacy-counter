@@ -10,55 +10,39 @@
     <script src="./public/scripts/fontawesome/all.min.js"></script>
 </head>
 <body>
-    <header class="top flex padding">
+    <header class="top flex padding margin-bottom">
         <div class="logo">logo</div>
         <button type="button" id="btn-config" class="no-border transition pointer" title="Configurações"><i class="fas fa-cog"></i></button>
     </header>
 
-    <section id="info-cliente" class="flex padding">
-        <div id="cliente" class="transition">
-            <input type="text" class="flex1 border radius" disabled="disabled" placeholder="Nome do cliente"/>
-            <input type="tel" class="border radius" disabled="disabled" placeholder="(00) 0.0000-0000"/>
-            <input type="email" class="border radius" placeholder="exemplo@exemplo.com" disabled="disabled"/>
-        </div>
-        <div id="basket" class="flex centered transition">
-            <i class="fas fa-shopping-basket pointer"></i>
-            <input type="text" id="qtd-items" class="no-border pointer" disabled="disabled" value="0" title="Quantidade de itens"/>
-            <input type="text" id="price" class="border radius pointer" disabled="disabled" value="R$ 00,00"/>
-        </div>
-    </section>
-
-    <!--FORMULÀRIOS-->
-    <section class="search flex">
-        <form action="" method="post" id="search-prod" class="flex">
+    <!--FORMULÀRIO-DE-PESQUISA-E-CESTA-DE-PRODUTOS-->
+    <section id="search-and-basket" class="flex">
+        <form action="" method="post" id="search-prod" class="flex flex1">
             <input type="search" id="input-prod" class="flex1 border input-form" placeholder="Pesquisar produto..."/>
             <button type="submit" class="border pointer transition" title="Pesquisar produto"><i class="fas fa-search"></i></button>
         </form>
 
-        <form action="" method="post" id="search-cliente" class="flex">
-            <div class="flex flex1">
-                <input type="search" id="input-cpf" class="flex1 input-form border radius" placeholder="Informar cliente" maxlength="14"/>
-                <button type="submit" id="btn-search-cliente" class="pointer border radius padding transition" title="Pesquisar cliente"><i class="fas fa-search"></i></button>
-            </div>
-            
-            <button type="button" id="btn-new-cliente" class="pointer border radius padding transition"><i class="fas fa-user-plus" title="Cadastrar cliente"></i></button>
-            <button type="reset" id="btn-reset-cliente" class="pointer border radius padding transition" title="Limpar cliente"><i class="fas fa-times"></i></button>
-        </form>
+        <div id="basket" class="flex centered radius transition">
+            <i class="fas fa-shopping-basket pointer"></i>
+            <input type="text" id="qtd-items" class="no-border pointer" disabled="disabled" value="0" title="Quantidade de itens"/>
+            <input type="text" id="price" class="flex1 no-border pointer" disabled="disabled" value="R$ 00,00"/>
+        </div>
     </section>
 
     <!--CONTEÚDO-PRINCIPAL-->
-    <section class="content padding">
+    <section id="content">
         <div id="img-prod" class="border">
             img
         </div>
         <div id="prod" class="border">
             prod
         </div>
-        <div id="actions" class="border">
-            actions
-        </div>
-        <div id="like" class="border">
-            like
+        <div id="actions" class="radius">
+            <input type="number" id="desc" class="border radius" min="0" max="10" maxlength="2" placeholder="Desconto manual"/>
+            <p id="alert-desc" class="alert">Desconto não permitido!</p>
+            <button type="button" class="pointer"><i class="fas fa-off"></i>Aplicar Desconto</button>
+            <button type="button" class="pointer"><i class="fas fa-shopping-basket"></i> Adicionar a Cesta</button>
+            <button type="button" id="bula" class="pointer"><i class="fas fa-"></i>Consultar Bula</button>
         </div>
     </section>
 

@@ -36,8 +36,20 @@
 .radius {
     border-radius: 5px;
 }
+.upper {
+    text-transform: uppercase;
+}
+.margin-bottom {
+    margin-bottom: 1rem;
+}
 .transition {
     transition: all .2s;
+}
+.alert {
+    color: red;
+    display: none;
+    margin-bottom: 5px;
+    margin-top: -5px;
 }
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -48,7 +60,6 @@ body {
 .top {
     justify-content: space-between;
     align-items: center;
-    /* padding: .5rem 1rem; */
     height: 60px;
     background-color: #0066bf;
 }
@@ -61,26 +72,39 @@ body {
     transform: rotateZ(45deg);
 }
 
-/* INFORMAÇÔES DO CLENTE/COMPRAS */
-#info-cliente {
-    justify-content: space-between;
+/* FORMULÀRIO DE PESQUISA */
+#search-and-basket {
+    margin: 0 1rem 1rem;
 }
-#cliente {
-    display: grid;
-    grid-template-columns: 4fr 1fr 2fr;
-    grid-gap: .5rem;
-    margin-right: 1rem;
-    opacity: 0;
-}
-#cliente input {
+form input {
+    font-size: 1.5em;
+    height: 50px;
     padding: 0 .5rem;
-    font-size: 1.2em;
-    background-color:rgba(0,102,191,.1);
     color: #0066bf;
+    border-radius: 5px 0 0 5px;
 }
-
+form input:focus {
+    background-color: rgba(0,102,191,.08);
+}
+form button {
+    width: 50px;
+    font-size: 1.5em;
+    background-color: #0066bf;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+    opacity: .9;
+}
+form button:hover {
+    opacity: 1;
+}
+/* CESTA DE PRODUTOS */
 #basket {
     position: relative;
+    width: 220px;
+    margin-left: 1rem;
+    padding: 0 5px;
+    box-shadow: 0 0 2px 1px rgba(0,102,191,.4);
 }
 #basket:hover {
     transform: scale(1.05);
@@ -88,88 +112,47 @@ body {
 #basket svg {
     font-size: 2.5em;
     color: #0066bf;
-    margin-right: 15px;
 }
 #basket input#qtd-items {
     position: absolute;
-    top: 0;
-    left: 25px;
+    top: 2px;
+    left: 32px;
     width: 25px;
     height: 25px;
-    border-radius: 50%;
-    background-color: #dd1515;
+    background-color: red;
     color: #fff;
+    border-radius: 50%;
     text-align: center;
 }
 #basket input#price {
     min-width: 100px;
-    max-width: 125px;
-    height: 40px;
     background-color: #fff;
     color: #0066bf;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     text-align: center;
 }
 
-/* FORMS */
-.search {
+/* CONTEÚDO PRINCIPAL */
+#content {
     display: grid;
+    grid-template-columns: 250px auto 220px;
+    grid-template-rows: 250px;
     grid-gap: .5rem;
-    grid-template-columns: 2fr 1fr;
-    padding: 0 1rem;
-}
-.input-form {
-    padding: 0 .5rem;
-    background-color: #fff;
-    color: #0066bf;
-    font-size: 1.3em;
-    border-right: none;
-    border-radius: 5px 0 0 5px;
-}
-.input-form:focus {
-    background-color:rgba(0,102,191,.05);
+    margin: 0 1rem 1rem;
 }
 
-#search-prod button,
-#search-cliente div button {
-    width: 50px;
-    height: 45px;
-    background-color: #0066bf;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    font-size: 1.3em;
-    opacity: 0.8;
+#content #actions {
+    padding: .5rem;
+    box-shadow: 0 0 2px 1px rgba(0,102,191,.4);
 }
-#search-prod button:hover,
-#search-cliente div button:hover {
-    opacity: 1;
+#content #actions input,
+#content #actions button {
+    width: 100%;
+    font-size: 1.2em;
+    margin-bottom: .5rem;
 }
-#search-cliente button {
-    color: #0066bf;
-    width: 50px;
-    font-size: 1.3em;
-}
-#search-cliente button:hover {
-    color: #fff;
-}
-#btn-new-cliente {
-    margin: 0 .2rem;
-}
-#btn-new-cliente:hover {
-    background-color: #149816;
-    border: 1px solid #149816;
-}
-#btn-reset-cliente:hover {
-    background-color: #dd1515;
-    border: 1px solid #dd1515;
-}
-
-/* CONTENT */
-.content {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr .5fr;
-    grid-gap: .5rem;
-    margin: 1rem 0;
-    height: 250px;
+#content #actions input {
+    padding: 8px 5px;
+    outline: none;
 }
