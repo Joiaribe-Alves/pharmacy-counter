@@ -25,24 +25,40 @@
         <div id="basket" class="flex centered radius transition">
             <i class="fas fa-shopping-basket pointer"></i>
             <input type="text" id="qtd-items" class="no-border pointer" disabled="disabled" value="0" title="Quantidade de itens"/>
-            <input type="text" id="price" class="flex1 no-border pointer" disabled="disabled" value="R$ 00,00"/>
+            <input type="text" id="basket-price" class="flex1 no-border pointer" disabled="disabled" value="R$ 00,00"/>
         </div>
     </section>
 
     <!--CONTEÚDO-PRINCIPAL-->
     <section id="content">
-        <div id="img-prod" class="border">
+        <div id="img-prod">
             img
         </div>
-        <div id="prod" class="border">
-            prod
+        <div id="prod" class="flex upper">
+            <div id="inf-prod" class="flex1">
+                <h1>lorem ipsum</h1>
+                <p>Princípio ativo: <span>lorem ipsum</span></p>
+                <p>Categorias: <span>lorem > lorem > lorem</span></p>
+                <div id="codes" class="flex">
+                    <p id="cod-int">Cód. interno: <span>00000-0</span></p>
+                    <p id="cod-bars">Cód. barras: <span>0000000000000</span></p>
+                </div>
+            </div>
+            <div id="estoque">
+                <p id="qtd-estoque">0</p>
+                <p>Estoque</p>
+            </div>
         </div>
         <div id="actions" class="radius">
+            <div id="prices-prod">
+                <p id="full-price">De: <del>R$ 00,00</del></p>
+                <p id="price-prod">Por: <strong>R$ 00,00</strong></p>
+            </div>
             <input type="number" id="desc" class="border radius" min="0" max="10" maxlength="2" placeholder="Desconto manual"/>
             <p id="alert-desc" class="alert">Desconto não permitido!</p>
-            <button type="button" class="pointer"><i class="fas fa-off"></i>Aplicar Desconto</button>
-            <button type="button" class="pointer"><i class="fas fa-shopping-basket"></i> Adicionar a Cesta</button>
-            <button type="button" id="bula" class="pointer"><i class="fas fa-"></i>Consultar Bula</button>
+            <button type="button" class="border radius pointer transition"><i class="fas fa-off"></i>Aplicar Desconto</button>
+            <button type="button" class="border radius pointer transition"><i class="fas fa-shopping-basket"></i> Adicionar a Cesta</button>
+            <button type="button" id="bula" class="border radius pointer transition"><i class="fas fa-"></i>Consultar Bula</button>
         </div>
     </section>
 

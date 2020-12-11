@@ -124,10 +124,10 @@ form button:hover {
     border-radius: 50%;
     text-align: center;
 }
-#basket input#price {
+#basket input#basket-price {
     min-width: 100px;
     background-color: #fff;
-    color: #0066bf;
+    color: #222;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -142,17 +142,70 @@ form button:hover {
     margin: 0 1rem 1rem;
 }
 
+/* IMAGEM DO PRODUTO */
+#img-prod {
+    background-color: rgba(211, 211, 211, 0.545);
+}
+
+/* PRODUTO */
+#prod {
+    padding: .5rem;
+    color: #222;
+}
+#prod span {
+    font-weight: bold;
+}
+#prod #inf-prod p {
+    margin-bottom: 3px;
+}
+#prod #inf-prod h1 {
+    font-size: 1.8em;
+}
+
+/* CÓDIGO INTERNO E DE BARRAS */
+#prod #codes {
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+/* INFORMAÇÕES DE ESTOQUE */
+#estoque {
+    font-size: 1.1em;
+    text-align: center;
+    margin: 0 1rem;
+}
+#estoque p#qtd-estoque {
+    font-size: 2em;
+    font-weight: bold;
+}
+
 #content #actions {
     padding: .5rem;
     box-shadow: 0 0 2px 1px rgba(0,102,191,.4);
+}
+#content #prices-prod {
+    margin-bottom: .5rem;
+    color: #222;
+}
+#content #prices-prod p#price-prod strong {
+    font-size: 2em;
 }
 #content #actions input,
 #content #actions button {
     width: 100%;
     font-size: 1.2em;
     margin-bottom: .5rem;
+    background-color: #fff;
+    color: #0066bf;
 }
 #content #actions input {
     padding: 8px 5px;
     outline: none;
+}
+#content #actions button {
+    padding: .5rem 0;
+}
+#content #actions button:hover {
+    background-color: #0066bf;
+    color: #fff;
 }
