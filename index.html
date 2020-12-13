@@ -12,8 +12,19 @@
 <body>
     <header class="top flex padding margin-bottom">
         <div class="logo">logo</div>
-        <button type="button" id="btn-config" class="no-border transition pointer" title="Configurações"><i class="fas fa-cog"></i></button>
+        <button type="button" id="btn-menu" class="no-border transition pointer" title="Configurações"><i class="fas fa-bars"></i></button>
     </header>
+    <div id="menu" class="flex radius" style="display: none;">
+        <a href="#" id="new-cad" class="transition radius"><i class="fas fa-user-plus"></i> Cadastrar Cliente</a>
+        <a href="#" class="transition radius"><i class="fas fa-search-dollar"></i> Consultar Vendas</a>
+        <a href="#" class="transition radius"><i class="fas fa-file-signature"></i> Consultar Receitas</a>
+        <a href="#" class="transition radius"><i class="fas fa-user-tie"></i> Painel Administrativo</a>
+        <!--<a href="#" class="transition radius">Tema</a>-->
+    </div>
+
+    <div class="modal">
+
+    </div>
 
     <!--FORMULÀRIO-DE-PESQUISA-E-CESTA-DE-PRODUTOS-->
     <section id="search-and-basket" class="flex">
@@ -56,9 +67,9 @@
             </div>
             <input type="number" id="desc" class="border radius" min="0" max="10" maxlength="2" placeholder="Desconto manual"/>
             <p id="alert-desc" class="alert">Desconto não permitido!</p>
-            <button type="button" class="border radius pointer transition"><i class="fas fa-off"></i>Aplicar Desconto</button>
+            <button type="button" class="border radius pointer transition"><i class="fas fa-percent"></i> Aplicar Desconto</button>
             <button type="button" class="border radius pointer transition"><i class="fas fa-shopping-basket"></i> Adicionar a Cesta</button>
-            <button type="button" id="bula" class="border radius pointer transition"><i class="fas fa-"></i>Consultar Bula</button>
+            <button type="button" id="bula" class="border radius pointer transition"><i class="far fa-file-alt"></i> Consultar Bula</button>
         </div>
     </section>
 

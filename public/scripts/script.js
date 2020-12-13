@@ -24,6 +24,19 @@ resetCliente.addEventListener("click", () => {
 });
 */
 
+// ABRE E FECHA O MENU
+const btnMenu = document.querySelector("#btn-menu");
+const menu = document.querySelector("#menu");
+
+btnMenu.addEventListener("click", () => {
+    if(menu.style.display == "none") {
+        menu.style.display = "flex";
+    } else {
+        menu.style.display = "none";
+    }
+});
+
+
 // VALIDA O VALOR DIGITADO NO CAMPO DESCONTO MANUAL
 const descMan = document.getElementById("desc");
 const alertDesc = document.getElementById("alert-desc");
