@@ -1,0 +1,52 @@
+:root {
+    --bgColorBlue: #0066cd;
+    --bgColorWhite: #ffffff;
+    --bgColorRed: #cd3545;
+    --colorBlue: #0066cd;
+    --colorWhite: #ffffff;
+    --colorGray: #222;
+    --colorRed: #cd3545;
+    --borderColorBlue: #0066cd;
+}
+
+/* DISPLAYS */
+.grid {
+    display: grid;
+}
+.flex {
+    display: flex;
+}
+
+/* JUSTIFY CONTENT */
+.between {
+    justify-content: space-between;
+}
+
+/* WARNING */
+.warning {
+    font-size: .8em;
+    color: var(--colorRed);
+}
+.warningInput {
+    display: none;
+}
+.required {
+    color: var(--colorRed);
+}
+
+/* TITLE */
+.title {
+    font-size: 1.3em;
+    color: var(--colorGray);
+    font-weight: bold;
+}
+.title svg {
+    font-size: .6em;
+}
+
+/* OUTLINE */
+input,
+button,
+select {
+    outline: none;
+}

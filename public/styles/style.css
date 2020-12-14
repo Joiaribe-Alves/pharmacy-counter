@@ -1,20 +1,10 @@
-/* IMPORTAÇÂO DAS FONTES */
-@font-face {
-    font-family: "BubueloCleanProLigth";
-    src: url("../fonts/");
-}
-:root {
-    --blue: #0066bf;
-}
 /* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.flex {
-    display: flex;
-}
+
 .flex1 {
     flex: 1;
 }
@@ -29,7 +19,7 @@
     cursor: pointer;
 }
 .border {
-    border: 1px solid var(--blue);
+    border: 1px solid var(--borderColorBlue);
 }
 .no-border {
     border: none;
@@ -47,12 +37,77 @@
 .transition {
     transition: all .2s;
 }
-.alert {
+p.alert {
     color: red;
     display: none;
     margin-bottom: 5px;
     margin-top: -5px;
 }
+
+.modal {
+    position: absolute;
+    /* top: -10%; */
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    width: 700px;
+    height: auto;
+    min-height: 350px;
+    background-color: var(--bgColorWhite);
+    box-shadow: 0 0 2px 1px rgba(0,102,191,.4);
+    font-size: 1.2em;
+    /* opacity: 0;
+    z-index: -1; */
+    overflow: hidden;
+}
+.modal div.closeModal {
+    text-align: right;
+}
+.modal div.closeModal button {
+    padding: .5rem 1.5rem;
+    background-color: var(--bgColorWhite);
+    color: var(--colorBlue);
+    font-size: 1.2em;
+}
+.modal div.closeModal button:hover {
+    background-color: var(--bgColorRed);
+    color: var(--colorWhite);
+}
+
+.modal form.slider {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 2100px;
+    margin: .5rem 0;
+}
+.modal form.slider fieldset {
+    padding: 0 1rem;
+}
+#inputName {
+    text-transform: capitalize;
+}
+.modal form.slider fieldset div#optionalData {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: .5rem;
+}
+
+/* BOTÕES DE AVANÇAR/RETROCEDER*/
+.modal div.buttons {
+    padding: 0 .5rem .5rem;
+}
+.modal div.buttons button {
+    padding: .5rem 1rem;
+    background-color: var(--bgColorWhite);
+    color: var(--colorBlue);
+    font-size: 1.2em;
+}
+.modal div.buttons button:hover {
+    background-color: var(--bgColorBlue);
+    color: var(--colorWhite);
+}
+.modal div.buttons button#btnPrev {
+    visibility: hidden;
+}
+
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 100%;
@@ -95,30 +150,19 @@ a {
     z-index: 3;
 }
 #menu a {
-    padding: .5rem;
+    padding: .8rem .5rem;
 }
 #menu a:hover {
     background-color: #0066bf;
     color: #fff;
 }
 
-/* MODAL */
-.modal {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    display: none;
-    width: 100%;
-    min-height: 500px;
-    padding: 1rem;
-    background-color: #fff;
-    z-index: 2;
-}
 
 /* FORMULÀRIO DE PESQUISA */
 #search-and-basket {
     margin: 0 1rem 1rem;
 }
+/*
 form input {
     font-size: 1.5em;
     height: 50px;
@@ -141,6 +185,7 @@ form button {
 form button:hover {
     opacity: 1;
 }
+*/
 /* CESTA DE PRODUTOS */
 #basket {
     position: relative;

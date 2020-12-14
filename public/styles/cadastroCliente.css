@@ -1,0 +1,16 @@
+#personalData > div {
+    margin-bottom: .5rem;
+}
+
+#personalData > div:nth-child(2) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: .5rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: .5rem;
+    font-size: 1em;
+    background-color: var(--bgColorWhite);
+}

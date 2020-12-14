@@ -36,6 +36,22 @@ btnMenu.addEventListener("click", () => {
     }
 });
 
+// ABRE O MODAL CADASTRO
+const btnNewCad = document.querySelector("#btnNewCad");
+btnNewCad.addEventListener("click", () => {
+    modal.style.top = "10%";
+    modal.style.opacity = "1";
+    modal.style.zIndex = "5";
+});
+
+// FECHA O MODAL
+const modal = document.querySelector(".modal");
+const btnCloseModal = document.querySelector("#btnCloseModal");
+btnCloseModal.addEventListener("click", () => {
+    modal.style.top = "-10%";
+    modal.style.opacity = "0";
+    modal.style.zIndex = "-1";
+});
 
 // VALIDA O VALOR DIGITADO NO CAMPO DESCONTO MANUAL
 const descMan = document.getElementById("desc");
