@@ -1,10 +1,7 @@
-#personalData > div {
-    margin-bottom: .5rem;
-}
-
-#personalData > div:nth-child(2) {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: .5rem;
+#cdns {
+    grid-template-columns: 2fr 1.5fr 1fr;
+    gap: .5rem;
+    margin: .5rem 0;
 }
 
 input,
@@ -13,4 +10,56 @@ select {
     padding: .5rem;
     font-size: 1em;
     background-color: var(--bgColorWhite);
+}
+input[type="date"] {
+    /* padding: .2rem .5rem; */
+    font-size: 1.05em;
+}
+
+/* INFORMAÇÕES DE ENDEREÇO */
+#locatition {
+    grid-template-columns: 1.5fr 1fr 2fr;
+    gap: .5rem;
+}
+#locatition a {
+    font-size: .8em;
+}
+#locatition a:hover {
+    text-decoration: underline;
+}
+#locatition input[disabled="disabled"] {
+    background-color: #eee;
+}
+#address1 {
+    grid-template-columns: 3fr 1fr;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+#address2 {
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+}
+
+/* INFORMAÇÕES DE CONTATO */
+#phones {
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+#btnSubmit {
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
+    display: none;
+    padding: .5rem 1.6rem;
+    font-size: 1.2em;
+    background-color: seagreen;
+    color: var(--bgColorWhite);
+    border-color: seagreen;
+    opacity: .9;
+    z-index: 5;
+}
+#btnSubmit:hover {
+    opacity: 1;
 }

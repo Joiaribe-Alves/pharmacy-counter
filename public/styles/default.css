@@ -36,12 +36,10 @@
 
 /* TITLE */
 .title {
+    margin-bottom: .5rem;
     font-size: 1.3em;
     color: var(--colorGray);
     font-weight: bold;
-}
-.title svg {
-    font-size: .6em;
 }
 
 /* OUTLINE */

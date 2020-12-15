@@ -30,58 +30,123 @@
         </div>
 
         <form id="formCadCliente" class="slider flex1 grid transition">
-            <fieldset id="personalData" class="no-border">
+            <fieldset class="no-border">
+                <p class="title">Dados pessoais</p>
                 <div>
                     <label for="inputName">Nome:<span class="required">&#42;</span></label><br/>
-                    <input type="text" id="inputName" class="border radius" placeholder="Nome completo" maxlength="255" required="required"/>
+                    <input type="text" id="inputName" class="border radius" maxlength="255" placeholder="Nome completo" required="required"/>
                 </div>
 
-                <div class="grid">
+                <div id="cdns" class="grid">
                     <div>
                         <label for="inputCpf">CPF:<span class="required">&#42;</span></label><br/>
-                        <input type="text" id="inputCpf" class="border radius" placeholder="Somente números" maxlength="14" required="required"/>
+                        <input type="text" id="inputCpf" class="border radius" maxlength="14" placeholder="Apenas números" required="required"/>
                     </div>
                     <div>
-                        <label for="inputDataNasc">Data de Nasc.:<span class="required">&#42;</span></label><br/>
-                        <input type="text" id="inputDataNasc" class="border radius" placeholder="dd/mm/aaaa" maxlength="10" required="required"/>
+                        <label for="inputDataNasc">Data Nasc.:<span class="required">&#42;</span></label><br/>
+                        <input type="date" id="inputDataNasc" class="border radius" required="required"/>
                     </div>
                     <div>
-                        <label for="gender">Gênero:<span class="required">&#42;</span></label><br/>
-                        <select id="gender" class="border radius" required="required">
-                            <option value="Sel">Selecione</option>
+                        <label for="inputGender">Sexo:<span class="required">&#42;</span></label><br/>
+                        <select id="inputGender" class="border radius">
+                            <option value="0">Selecione</option>
                             <option value="M">Masculino</option>
                             <option value="F">Feminino</option>
                             <option value="NB">Não Binário</option>
                         </select>
                     </div>
-                </div>
-                <p class="title">Dados adicionais</p>
-                <div id="optionalData" class="grid">
-                    <select id="" class="border radius">
-                        <option value="Sel">Slecione um documento</option>
-                        <option value="RG">Cédula de Identidade &#8208; RG</option>
-                    </select>
-                    <input type="text" class="border radius" placeholder="Número do documento" maxlength="50"/>
-                    <select id="" class="border radius">
-                        <option value="">Orgão Emissor</option>
-                        <option value="SSP">SSP</option>
-                    </select>
+                    <div>
+                        <label for="select">Selecione o documento</label>
+                        <select id="select" class="border radius">
+                            <option value="RG">Cédula de Identidade &#8208; RG</option>
+                            <option value="TE">Título de Eleitor</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="docNumber">Nº do documento:</label><br/>
+                        <input type="text" id="docNumber" class="border radius" maxlength="50" placeholder="Número de documento"/>
+                    </div>
+                    <div>
+                        <label for="emissor">Orgão emissor:</label><br/>
+                        <select id="emissor" class="border radius">
+                            <option value="SSP">SSP</option>
+                            <option value="OAB">OAB</option>
+                        </select>
+                    </div>
                 </div>
                 <p class="warning warningInput">Por favor, verifique o&#40;s&#41; campo&#40;s&#41; marcado&#40;s&#41; em vermelho&#33;</p>
             </fieldset>
 
-            <fieldset class="no-border" style="background-color: red;">
-                //
+            <fieldset class="no-border">
+                <p class="title">Informações de contato</p>
+                <div id="phones" class="grid">
+                    <div>
+                        <label for="inputPhoneNumber1">Celular:<span class="required">&#42;</span></label><br/>
+                        <input type="tel" id="inputPhoneNumber1" class="border radius" maxlength="16" placeholder="(00) 0.0000-0000" required="required"/>
+                    </div>
+                    <div>
+                        <label for="inputPhoneNumber2">Fixo:</label><br/>
+                        <input type="tel" id="inputPhoneNumber2" class="border radius" maxlength="14" placeholder="(00) 0000-0000"/>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="inputEmail">E-mail:<span class="required">&#42;</span></label><br/>
+                        <input type="email" id="inputEmail" class="border radius" maxlength="150" placeholder="Endereço de e-mail" required="required">
+                    </div>
+                </div>
+                <p class="warning warningInput">Por favor, verifique o&#40;s&#41; campo&#40;s&#41; marcado&#40;s&#41; em vermelho&#33;</p>
             </fieldset>
 
             <fieldset class="no-border">
-                //
+                <p class="title">Informações de endereço</p>
+                <div id="locatition" class="grid">
+                    <div>
+                        <label for="inputCep">CEP:<span class="required">&#42;</span></label><br/>
+                        <input type="text" id="inputCep" class="border radius" placeholder="Apenas números" maxlength="10" required="required"/><br/>
+                        <a href="#" target="_blank">Não sei meu CEP</a>
+                    </div>
+                    <div>
+                        <label for="inputState">Estado:</label><br/>
+                        <input type="text" id="inputState" class="border radius" placeholder="UF" disabled="disabled"/>
+                    </div>
+                    <div>
+                        <label for="">Cidade:</label><br/>
+                        <input type="text" id="inputCity" class="border radius" placeholder="Cidade" disabled="disabled"/>
+                    </div>
+                </div>
+
+                <div>
+                    <div id="address1" class="grid">
+                        <div>
+                            <label for="inputStreet">Logradouro:<span class="required">&#42;</span></label><br/>
+                            <input type="text" id="inputStreet" class="border radius" maxlength="255" placeholder="Rua, Avenida..." required="required"/>
+                        </div>
+                        <div>
+                            <label for="inputNumber">Número:<span class="required">&#42;</span></label><br/>
+                            <input type="number" id="inputNumber" class="border radius" min="1" max="9999" placeholder="Número" required="required"/>
+                        </div>
+                    </div>
+
+                    <div id="address2" class="grid">
+                        <div>
+                            <label for="inputBairro">Bairro:<span class="required">&#42;</span></label><br/>
+                            <input type="text" id="inputBairro" class="border radius" maxlength="255" placeholder="Ex.: Jardim Esperança" required="required"/>
+                        </div>
+                        <div>
+                            <label for="inputCompl">Complemento:</label><br/>
+                            <input type="text" id="inputCompl" class="border radius" maxlength="255" placeholder="Casa, Apto..."/>
+                        </div>
+                    </div>
+                </div>
             </fieldset>
+            <button type="submit" for="formCadCliente" id="btnSubmit" class="border radius pointer transition"><i class="fas fa-save"></i> Salvar</button>
         </form>
 
         <div class="buttons flex between">
             <button type="button" id="btnPrev" class="border radius pointer transition"><i class="fas fa-angle-double-left"></i> Anterior</button>
             <button type="button" id="btnNext" class="border radius pointer transition">Próximo <i class="fas fa-angle-double-right"></i></button>
+            
         </div>
     </div>
 
