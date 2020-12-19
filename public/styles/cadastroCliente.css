@@ -1,65 +1,119 @@
-#cdns {
-    grid-template-columns: 2fr 1.5fr 1fr;
+#cadastroCliente {
+    padding: 0 1rem 1rem;
+}
+
+/* FORMULÁRIO */
+form {
+    margin: .5rem 0;
+    color: var(--gray);
+    font-size: 1.2em;
+}
+form fieldset {
+    margin-bottom: 1rem;
+    border: none;
+}
+form legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+form input,
+form select {
+    width: 100%;
+    height: 45px;
+    padding: 0 .5rem;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.1em;
+    background-color: var(--white);
+    color: var(--gray);
+}
+form input:focus,
+form select:focus {
+    background-color: var(--bgFocus);
+}
+form input[disabled="disabled"] {
+    background-color: #eee;
+}
+form fieldset div#data1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: .5rem;
+}
+form fieldset div#data2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: .5rem;
     margin: .5rem 0;
 }
-
-input,
-select {
-    width: 100%;
-    padding: .5rem;
-    font-size: 1em;
-    background-color: var(--bgColorWhite);
-}
-input[type="date"] {
-    /* padding: .2rem .5rem; */
-    font-size: 1.05em;
-}
-
-/* INFORMAÇÕES DE ENDEREÇO */
-#locatition {
-    grid-template-columns: 1.5fr 1fr 2fr;
+form fieldset div#contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
     gap: .5rem;
 }
-#locatition a {
-    font-size: .8em;
+form fieldset div#locatition {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: .5rem;
+    margin-bottom: .5rem;
 }
-#locatition a:hover {
-    text-decoration: underline;
-}
-#locatition input[disabled="disabled"] {
-    background-color: #eee;
-}
-#address1 {
+form fieldset div#address1 {
+    display: grid;
     grid-template-columns: 3fr 1fr;
     gap: .5rem;
     margin-bottom: .5rem;
 }
-#address2 {
+form fieldset div#address2 {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .5rem;
 }
 
-/* INFORMAÇÕES DE CONTATO */
-#phones {
-    grid-template-columns: 1fr 1fr;
-    gap: .5rem;
-    margin-bottom: .5rem;
+#btns {
+    text-align: right;
 }
-
-#btnSubmit {
-    position: absolute;
-    right: .5rem;
-    bottom: .5rem;
-    display: none;
-    padding: .5rem 1.6rem;
+button[type="reset"],
+button[type="submit"] {
+    height: 45px;
+    padding: 0 1rem;
+    border-radius: 5px;
+    outline: none;
     font-size: 1.2em;
-    background-color: seagreen;
-    color: var(--bgColorWhite);
-    border-color: seagreen;
-    opacity: .9;
-    z-index: 5;
+    cursor: pointer;
+    transition: all .2s;
 }
-#btnSubmit:hover {
-    opacity: 1;
+button[type="reset"] {
+    background-color: var(--white);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    margin-right: 1rem;
+}
+button[type="submit"] {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+}
+button[type="reset"]:hover {
+    background-color: var(--danger);
+    color: var(--white);
+}
+button[type="submit"]:hover {
+    transform: scale(1.1);
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: .9em;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.warning {
+    color: var(--danger);
+    font-size: .9em;
+}
+.inputRequired {
+    color: var(--danger);
 }

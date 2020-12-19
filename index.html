@@ -7,165 +7,90 @@
 
     <link rel="stylesheet" href="./public/styles/style.css"/>
     <link rel="stylesheet" href="./public/styles/default.css"/>
-    <link rel="stylesheet" href="./public/styles/cadastroCliente.css"/>
+    <!-- <link rel="stylesheet" href="./public/styles/cadastroCliente.css"/> -->
 
     <script src="./public/scripts/fontawesome/all.min.js"></script>
+
 </head>
 <body>
-    <header class="top flex padding margin-bottom">
+    <header id="top">
         <div class="logo">logo</div>
-        <button type="button" id="btn-menu" class="no-border transition pointer" title="Configurações"><i class="fas fa-bars"></i></button>
+        <button type="button" id="btn-menu" title="Configurações"><i class="fas fa-bars"></i></button>
     </header>
     <div id="menu" class="flex radius" style="display: none;">
-        <a href="#" id="btnNewCad" class="transition radius"><i class="fas fa-user-plus"></i> Cadastrar Cliente</a>
+        <!-- <a href="#" id="btnNewCustomer" class="transition radius"><i class="fas fa-user-plus"></i> Cadastrar Cliente</a> -->
+        <button id="btnNewCustomer" class="transition radius"><i class="fas fa-user-plus"></i> Cadastrar Cliente</button>
+
         <a href="#" class="transition radius"><i class="fas fa-search-dollar"></i> Consultar Vendas</a>
         <a href="#" class="transition radius"><i class="fas fa-file-signature"></i> Consultar Receitas</a>
         <a href="#" class="transition radius"><i class="fas fa-user-tie"></i> Painel Administrativo</a>
         <!--<a href="#" class="transition radius">Tema</a>-->
     </div>
 
-    <div id="cadastroCliente" class="modal flex transition">
-        <div class="closeModal">
-            <button type="button" id="btnCloseModal" class="pointer no-border transition" title="Fechar">X</button>
-        </div>
+    <header id="headerIframe">
+        <p><i class="fas fa-user-plus"></i>&nbsp;Cadastrar novo cliente</p>
 
-        <form id="formCadCliente" class="slider flex1 grid transition">
-            <fieldset class="no-border">
-                <p class="title">Dados pessoais</p>
-                <div>
-                    <label for="inputName">Nome:<span class="required">&#42;</span></label><br/>
-                    <input type="text" id="inputName" class="border radius" maxlength="255" placeholder="Nome completo" required="required"/>
-                </div>
+        <button type="button" id="close" title="Fechar">X</button>
+    </header>
 
-                <div id="cdns" class="grid">
-                    <div>
-                        <label for="inputCpf">CPF:<span class="required">&#42;</span></label><br/>
-                        <input type="text" id="inputCpf" class="border radius" maxlength="14" placeholder="Apenas números" required="required"/>
-                    </div>
-                    <div>
-                        <label for="inputDataNasc">Data Nasc.:<span class="required">&#42;</span></label><br/>
-                        <input type="date" id="inputDataNasc" class="border radius" required="required"/>
-                    </div>
-                    <div>
-                        <label for="inputGender">Sexo:<span class="required">&#42;</span></label><br/>
-                        <select id="inputGender" class="border radius">
-                            <option value="0">Selecione</option>
-                            <option value="M">Masculino</option>
-                            <option value="F">Feminino</option>
-                            <option value="NB">Não Binário</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="select">Selecione o documento</label>
-                        <select id="select" class="border radius">
-                            <option value="RG">Cédula de Identidade &#8208; RG</option>
-                            <option value="TE">Título de Eleitor</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="docNumber">Nº do documento:</label><br/>
-                        <input type="text" id="docNumber" class="border radius" maxlength="50" placeholder="Número de documento"/>
-                    </div>
-                    <div>
-                        <label for="emissor">Orgão emissor:</label><br/>
-                        <select id="emissor" class="border radius">
-                            <option value="SSP">SSP</option>
-                            <option value="OAB">OAB</option>
-                        </select>
-                    </div>
-                </div>
-                <p class="warning warningInput">Por favor, verifique o&#40;s&#41; campo&#40;s&#41; marcado&#40;s&#41; em vermelho&#33;</p>
-            </fieldset>
+    <iframe id="newCustomer" frameborder="0"></iframe>
 
-            <fieldset class="no-border">
-                <p class="title">Informações de contato</p>
-                <div id="phones" class="grid">
-                    <div>
-                        <label for="inputPhoneNumber1">Celular:<span class="required">&#42;</span></label><br/>
-                        <input type="tel" id="inputPhoneNumber1" class="border radius" maxlength="16" placeholder="(00) 0.0000-0000" required="required"/>
-                    </div>
-                    <div>
-                        <label for="inputPhoneNumber2">Fixo:</label><br/>
-                        <input type="tel" id="inputPhoneNumber2" class="border radius" maxlength="14" placeholder="(00) 0000-0000"/>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="inputEmail">E-mail:<span class="required">&#42;</span></label><br/>
-                        <input type="email" id="inputEmail" class="border radius" maxlength="150" placeholder="Endereço de e-mail" required="required">
-                    </div>
-                </div>
-                <p class="warning warningInput">Por favor, verifique o&#40;s&#41; campo&#40;s&#41; marcado&#40;s&#41; em vermelho&#33;</p>
-            </fieldset>
-
-            <fieldset class="no-border">
-                <p class="title">Informações de endereço</p>
-                <div id="locatition" class="grid">
-                    <div>
-                        <label for="inputCep">CEP:<span class="required">&#42;</span></label><br/>
-                        <input type="text" id="inputCep" class="border radius" placeholder="Apenas números" maxlength="10" required="required"/><br/>
-                        <a href="#" target="_blank">Não sei meu CEP</a>
-                    </div>
-                    <div>
-                        <label for="inputState">Estado:</label><br/>
-                        <input type="text" id="inputState" class="border radius" placeholder="UF" disabled="disabled"/>
-                    </div>
-                    <div>
-                        <label for="">Cidade:</label><br/>
-                        <input type="text" id="inputCity" class="border radius" placeholder="Cidade" disabled="disabled"/>
-                    </div>
-                </div>
-
-                <div>
-                    <div id="address1" class="grid">
-                        <div>
-                            <label for="inputStreet">Logradouro:<span class="required">&#42;</span></label><br/>
-                            <input type="text" id="inputStreet" class="border radius" maxlength="255" placeholder="Rua, Avenida..." required="required"/>
-                        </div>
-                        <div>
-                            <label for="inputNumber">Número:<span class="required">&#42;</span></label><br/>
-                            <input type="number" id="inputNumber" class="border radius" min="1" max="9999" placeholder="Número" required="required"/>
-                        </div>
-                    </div>
-
-                    <div id="address2" class="grid">
-                        <div>
-                            <label for="inputBairro">Bairro:<span class="required">&#42;</span></label><br/>
-                            <input type="text" id="inputBairro" class="border radius" maxlength="255" placeholder="Ex.: Jardim Esperança" required="required"/>
-                        </div>
-                        <div>
-                            <label for="inputCompl">Complemento:</label><br/>
-                            <input type="text" id="inputCompl" class="border radius" maxlength="255" placeholder="Casa, Apto..."/>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-            <button type="submit" for="formCadCliente" id="btnSubmit" class="border radius pointer transition"><i class="fas fa-save"></i> Salvar</button>
+    <!-- pesquisa e cesta de produtos -->
+    <section id="containerForm">
+        <form action="" method="post">
+            <input type="search" id="q" placeholder="Pesquisar produto"/>
+            <button type="submit" title="Pesquisar"><i class="fas fa-search"></i></button>
         </form>
 
-        <div class="buttons flex between">
-            <button type="button" id="btnPrev" class="border radius pointer transition"><i class="fas fa-angle-double-left"></i> Anterior</button>
-            <button type="button" id="btnNext" class="border radius pointer transition">Próximo <i class="fas fa-angle-double-right"></i></button>
-            
+        <div id="basket">
+            <span id="iconBasket"><i class="fas fa-shopping-basket"></i></span>
+            <span id="qtdItems" title="Quantidade de itens">0</span>
+            <span type="text" id="priceBasket" title="Valor total">R$ 0,00</span>
         </div>
-    </div>
+    </section>
 
-    <!--FORMULÀRIO-DE-PESQUISA-E-CESTA-DE-PRODUTOS-->
-    <section id="search-and-basket" class="flex">
-        <form action="" method="post" id="search-prod" class="flex flex1">
-            <input type="search" id="input-prod" class="flex1 border input-form" placeholder="Pesquisar produto..."/>
-            <button type="submit" class="border pointer transition" title="Pesquisar produto"><i class="fas fa-search"></i></button>
-        </form>
+    <!-- conteúdo principal -->
+    <section id="content">
+        <div id="imgProd">
+            <img src="./public/img/prodID1.jpg" alt="Imagem Indisponível" srcset="">
+        </div>
 
-        <div id="basket" class="flex centered radius transition">
-            <i class="fas fa-shopping-basket pointer"></i>
-            <input type="text" id="qtd-items" class="no-border pointer" disabled="disabled" value="0" title="Quantidade de itens"/>
-            <input type="text" id="basket-price" class="flex1 no-border pointer" disabled="disabled" value="R$ 00,00"/>
+        <div id="product">
+            <div>
+                <h1>Lorem Ipsum</h1>
+                <p>lorem ipsum</p>
+                <p>lorem ipsum > lorem ipsum > lorem ipsum</p>
+
+                <div>
+                    <p>Cód. Interno: <span>12345-6</span></p>
+                    <p>Cód. Barras: <span>0000000000000</span></p>
+                </div>
+            </div>
+
+            <div id="stock" style="border: 1px solid red;">
+                <p id="qtdStock">0</p>
+                <p>Estoque</p>
+            </div>
+        </div>
+
+        <div>
+            <div id="priceProd">
+                <p>De: <del>R$ 0,00</del></p>
+                <p>Por: <strong>R$ 0,00</strong></p>
+            </div>
+
+            <div id="actions">
+                <input type="number" id="off" placeholder="Desconto manual %"/>
+                <!-- <button>Aplicar desconto</button> -->
+                <button><i class="fas fa-shopping-basket"></i>&nbsp;Adicionar a cesta</button>
+                <button>Deixei de vender</button>
+                <button><i class="fas fa-file"></i>&nbsp;Acessar bula</button>
+            </div>
         </div>
     </section>
 
     <!--CONTEÚDO-PRINCIPAL-->
-    <section id="content">
+    <!-- <section id="content">
         <div id="img-prod">
             img
         </div>
@@ -195,11 +120,30 @@
             <button type="button" class="border radius pointer transition"><i class="fas fa-shopping-basket"></i> Adicionar a Cesta</button>
             <button type="button" id="bula" class="border radius pointer transition"><i class="far fa-file-alt"></i> Consultar Bula</button>
         </div>
-    </section>
+    </section> -->
 
     <script src="./public/scripts/script.js"></script>
     <script src="./public/scripts/cadastroCliente.js"></script>
 
+    <script>
+        const headerIframe = document.querySelector("#headerIframe");
+        let iframe = document.getElementsByTagName("iframe")[0];
+        let btnNewCustomer = document.querySelector("#btnNewCustomer");
+        let teste = "teste"
+        const close = document.querySelector("#close")
 
+        btnNewCustomer.addEventListener("click", () => {
+            
+            iframe.setAttribute("src", "./public/src/cadastro-cliente.html");
+            iframe.style.display = "block";
+            headerIframe.style.display = "flex";
+        });
+
+        close.addEventListener("click", () => {
+            headerIframe.style.display = "none";
+            iframe.style.display = "none";
+            iframe.removeAttribute("src");
+        });
+    </script>
 </body>
 </html>

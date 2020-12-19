@@ -1,42 +1,12 @@
-const slider = document.querySelector("#formCadCliente");
-const btnPrev = document.querySelector("#btnPrev");
-const btnNext = document.querySelector("#btnNext");
-const btnSubmit = document.querySelector("#btnSubmit");
-let currentMargin = 0;
-
-btnNext.addEventListener("click", () => {
-    currentMargin += 100;
-    if(currentMargin < 201) {
-        slider.style.marginLeft = `-${currentMargin}%`;
-        btnPrev.style.visibility = "visible";
-    }
-    if(currentMargin == 200) {
-       btnNext.style.visibility = "hidden";
-       btnSubmit.style.display = "block";
-    }
-});
-
-btnPrev.addEventListener("click", () => {
-    currentMargin -= 100;
-    if(currentMargin < 200) {
-        slider.style.marginLeft = `-${currentMargin}%`;
-        btnNext.style.visibility = "visible";
-        btnSubmit.style.display = "none";
-    }
-    if(currentMargin == 0) {
-       btnPrev.style.visibility = "hidden";
-    }
-});
-
 // MASCARA DOS CAMPOS
 const inputCpf = document.querySelector("#inputCpf");
+const inputName = document.querySelector("#inputName");
 const inputDataNasc = document.querySelector("#inputDataNasc");
 const inputCep = document.querySelector("#inputCep");
+const inputLog = document.querySelector("#inputLog");
 const inputPhoneNumber1 = document.querySelector("#inputPhoneNumber1");
 const inputPhoneNumber2 = document.querySelector("#inputPhoneNumber2");
 const inputEmail = document.querySelector("#inputEmail");
-
-
 
 inputCpf.addEventListener("keyup", () => {
     if(inputCpf.value.length == 3) {
@@ -47,10 +17,11 @@ inputCpf.addEventListener("keyup", () => {
         inputCpf.value += "-";
     }
     if(inputCpf.value.length == 14) {
-        inputDataNasc.focus();
+        inputName.focus();
     }
 });
 
+/*
 inputDataNasc.addEventListener("keyup", () => {
     if(inputDataNasc.value.length == 2) {
         inputDataNasc.value += "/";
@@ -58,12 +29,16 @@ inputDataNasc.addEventListener("keyup", () => {
         inputDataNasc.value += "/";
     }
 });
+*/
 
 inputCep.addEventListener("keyup", () => {
     if(inputCep.value.length == 2) {
         inputCep.value += ".";
     } else if(inputCep.value.length == 6) {
         inputCep.value += "-";
+    }
+    if(inputCep.value.length == 10) {
+        inputLog.focus();
     }
 });
 

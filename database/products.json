@@ -1,0 +1,26 @@
+{
+    "medicamentos": {
+        "prod1": {
+            "nome": "20 Bí Caps/5",
+            "codBar": "7892020123456",
+            "codInt": "12345-6",
+            "preco": 29.90
+        },
+        "prod2": {
+            "nome": "20 Bí Caps/10",
+            "codBar": "7892020123456",
+            "condInt": "12345-6",
+            "preco": 59.90
+        },
+        "prod3": {
+            "nome": "20 Bí Caps/30",
+            "codBar": "7892020123456",
+            "condInt": "12345-6",
+            "preco": 119.90
+        }
+        
+    },
+    "perfumaria": {
+        "p1": "p1"
+    }
+}

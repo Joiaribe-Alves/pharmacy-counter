@@ -1,50 +1,15 @@
 :root {
-    --bgColorBlue: #0066cd;
-    --bgColorWhite: #ffffff;
-    --bgColorRed: #cd3545;
-    --colorBlue: #0066cd;
-    --colorWhite: #ffffff;
-    --colorGray: #222;
-    --colorRed: #cd3545;
-    --borderColorBlue: #0066cd;
+    --blue: #0066cd;
+    --white: #fff;
+    --red: #cd3545;
+    --danger: #c62d2d;
+    --gray: #333;
+    --green: #23963d;
+    --bgFocus: rgba(0,102,191,.1)
 }
 
-/* DISPLAYS */
-.grid {
-    display: grid;
-}
-.flex {
-    display: flex;
-}
-
-/* JUSTIFY CONTENT */
-.between {
-    justify-content: space-between;
-}
-
-/* WARNING */
-.warning {
-    font-size: .8em;
-    color: var(--colorRed);
-}
-.warningInput {
-    display: none;
-}
-.required {
-    color: var(--colorRed);
-}
-
-/* TITLE */
-.title {
-    margin-bottom: .5rem;
-    font-size: 1.3em;
-    color: var(--colorGray);
-    font-weight: bold;
-}
-
-/* OUTLINE */
-input,
-button,
-select {
-    outline: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
