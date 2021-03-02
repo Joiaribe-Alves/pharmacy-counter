@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesta de produtos</title>
+
+    <!-- <link rel="stylesheet" href="../styles/style.css"/> -->
+    <link rel="stylesheet" href="../styles/default.css"/>
+    <link rel="stylesheet" href="../styles/cesta.css"/>
+
+    <script src="../scripts/fontawesome/all.min.js"></script>
+</head>
+<body>
+    <div id="clearBasket">
+        <button type="button">Limpar cesta</button>
+    </div>
+
+    <div id="container">
+        <div>
+        <table>
+            <thead>
+                <tr>
+                    <td style="width: 10%;">Código</td>
+                    <td style="width: 60%;">Descrição</td>
+                    <td style="width: 10%;">Quantidade</td>
+                    <td style="width: 10%;">Valor R$</td>
+                    <td style="width: 10%;">Excluir</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="txtCenter">00000-0</td>
+                    <td>Lorem Ipsum</td>
+                    <td class="txtCenter">1</td>
+                    <td class="txtCenter">0,00</td>
+                    <td class="txtCenter"><button type="button" title="Excluir produto"><i class="fas fa-trash-alt"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div id="totals">
+            <div id="infoTotals">
+                <h1>Valor Total R$ 00,00</h1>
+                <h2>Total de itens 0</h2>
+                <h2>TKM 0,00</h2>
+                <h2>Subtotal R$ 0,00</h2>
+                <p>Nesta compra o cliente está economizando <b>R$ 0,00</b></p>
+            </div>
+            <button type="button">Finalizar venda</button>
+        </div>
+    </div>
+    
+    <script src="../scripts/cesta.js"></script>
+</body>
+</html>

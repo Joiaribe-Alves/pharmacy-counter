@@ -4,6 +4,8 @@ const inputName = document.querySelector("#inputName");
 const inputDataNasc = document.querySelector("#inputDataNasc");
 const inputCep = document.querySelector("#inputCep");
 const inputLog = document.querySelector("#inputLog");
+const inputNumber = document.querySelector("#inputNumber");
+const inputBairro = document.querySelector("#inputBairro");
 const inputPhoneNumber1 = document.querySelector("#inputPhoneNumber1");
 const inputPhoneNumber2 = document.querySelector("#inputPhoneNumber2");
 const inputEmail = document.querySelector("#inputEmail");
@@ -21,16 +23,6 @@ inputCpf.addEventListener("keyup", () => {
     }
 });
 
-/*
-inputDataNasc.addEventListener("keyup", () => {
-    if(inputDataNasc.value.length == 2) {
-        inputDataNasc.value += "/";
-    } else if(inputDataNasc.value.length == 5) {
-        inputDataNasc.value += "/";
-    }
-});
-*/
-
 inputCep.addEventListener("keyup", () => {
     if(inputCep.value.length == 2) {
         inputCep.value += ".";
@@ -39,6 +31,14 @@ inputCep.addEventListener("keyup", () => {
     }
     if(inputCep.value.length == 10) {
         inputLog.focus();
+    }
+});
+
+inputNumber.addEventListener("keyup", () => {
+    if(inputNumber.value.length == 4) {
+        inputBairro.focus();
+    } else if(inputNumber.value.length > 4) {
+        inputNumber.value = "";
     }
 });
 

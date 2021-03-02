@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar receitas</title>
+
+    <!-- <link rel="stylesheet" href="../styles/style.css"/> -->
+    <link rel="stylesheet" href="../styles/default.css"/>
+    <link rel="stylesheet" href="../styles/consultaReceita.css"/>
+
+    <script src="../scripts/fontawesome/all.min.js"></script>
+</head>
+<body>
+    <form>
+        <fieldset>
+                <div>
+                    <label for="dataInicial">Data Inicial</label><br/>
+                    <input type="date" id="dataInicial" class="border radius"/>
+                </div>
+
+                <div>
+                    <label for="dataFinal">Data Final</label><br/>
+                    <input type="date" id="dataFinal" class="border radius"/>
+                </div>
+        </fieldset>
+
+        <div id="btns">
+            <button type="reset" id="reset" title="Limpar formulário"><i class="fas fa-ban"></i>&nbsp;Limpar</button>
+            <button type="submit" id="submit" title="Pesquisar"><i class="fas fa-search"></i>&nbsp;Pesquisar</button>
+        </div>
+    </form>
+
+    <hr style="color: var(--blue);"/>
+
+    <table>
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Receituário</td>
+                <td>Vendedor</td>
+                <td>CRM Prescritor</td>
+                <td>Nome Prescritor</td>
+                <td>Imprimir</td>
+                <td>Excluir</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>0001</td>
+                <td>Antimicrobiano em 2 vias</td>
+                <td>79040 - Joiaribe Guimarães Alves</td>
+                <td>3547/RO</td>
+                <td>Maria de Lourdes</td>
+                <td><button type="button" title="Imprimir etiqueta"><i class="fas fa-print"></i></button></td>
+                <td><button type="button" title="Excluir etiqueta"><i class="fas fa-ban"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="../scripts/consultaReceita.js"></script>
+</body>
+</html>

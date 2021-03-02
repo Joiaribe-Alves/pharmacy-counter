@@ -27,37 +27,43 @@ resetCliente.addEventListener("click", () => {
 // ABRE E FECHA O MENU
 const btnMenu = document.querySelector("#btn-menu");
 const menu = document.querySelector("#menu");
+const bgMenuOpen = document.querySelector("#bg-menu-open");
 
 btnMenu.addEventListener("click", () => {
     if(menu.style.display == "none") {
         menu.style.display = "flex";
+        bgMenuOpen.style.display = "block";
     } else {
         menu.style.display = "none";
+        bgMenuOpen.style.display = "none";
     }
 });
 
-// ABRE O MODAL CADASTRO
-/*
- *const btnNewCad = document.querySelector("#btnNewCad");
- *btnNewCad.addEventListener("click", () => {
- *   modal.style.top = "10%";
- *   modal.style.opacity = "1";
- *   modal.style.zIndex = "5";
- *});
-*/
+menu.addEventListener("mouseleave", () => {
+    menu.style.display = "none";
+    bgMenuOpen.style.display = "none";
+})
 
-// FECHA O MODAL
-/*
-const modal = document.querySelector(".modal");
-const btnCloseModal = document.querySelector("#btnCloseModal");
-btnCloseModal.addEventListener("click", () => {
-    modal.style.top = "-10%";
-    modal.style.opacity = "0";
-    modal.style.zIndex = "-1";
+// ZOOM NA IMAGEM DO PRODUTO AO PASSAR O MOUSE EM CIMA
+const image = document.querySelector("#currentImg");
+image.addEventListener("mousemove", function(e) {
+    let width = image.offsetWidth;
+    let height = image.offsetHeight;
+    let mouseX = e.offsetX;
+    let mouseY = e.offsetY;
+
+    let bgPosX = (mouseX / width * 100);
+    let bgPosY = (mouseY / height * 100);
+
+    image.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
 });
-*/
+
+image.addEventListener("mouseleave", () => {
+    image.style.backgroundPosition = "center";
+});
 
 // VALIDA O VALOR DIGITADO NO CAMPO DESCONTO MANUAL
+/*
 const descMan = document.getElementById("desc");
 const alertDesc = document.getElementById("alert-desc");
 descMan.addEventListener("keyup", () => {
@@ -72,10 +78,11 @@ descMan.addEventListener("keyup", () => {
         alertDesc.style.display = "none";
     }
 });
+*/
 
 // ABRE O SITE PARA CONSULTAR A BULA
-const btnBula = document.getElementById("bula");
-let nomeMed = "lorem-ipsum";
+const btnBula = document.getElementById("btnBula");
 btnBula.addEventListener("click", () => {
-    window.open(`https://www.bulasbrasil.com.br/bula/${nomeMed}`, "_blank");
+    window.open(`https://www.bulasbrasil.com.br/bula/`, "_blank");
+    console.log("...")
 });

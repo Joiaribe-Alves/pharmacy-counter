@@ -1,0 +1,97 @@
+form {
+    padding: 1rem;
+    color: var(--gray);
+    font-size: 1.2em;
+}
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+fieldset input {
+    width: 100%;
+    height: 45px;
+    padding: 0 .5rem;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.1em;
+    background-color: var(--white);
+    color: var(--gray);
+}
+fieldset input:focus {
+    background-color: var(--bgFocus);
+}
+
+#btns {
+    text-align: right;
+}
+button[type="reset"],
+button[type="submit"] {
+    height: 45px;
+    padding: 0 1rem;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all .2s;
+}
+button[type="reset"] {
+    background-color: var(--white);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    margin-right: 1rem;
+}
+button[type="submit"] {
+    background-color: var(--white);
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+button[type="reset"]:hover {
+    background-color: var(--danger);
+    color: var(--white);
+}
+button[type="submit"]:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+/* tabela de resultados */
+table {
+    width: 100%;
+    padding: 1rem;
+    column-gap: 0;
+    border-spacing: 0;
+}
+table tr {
+    height: 45px;
+}
+table tr td {
+    text-align: center;
+}
+
+thead tr {
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+tbody tr {
+    font-size: 1.2em;
+}
+tbody tr td button {
+    padding: .5rem 1.5rem;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    outline: none;
+    color: var(--blue);
+    cursor: pointer;
+    transition: all .2s;
+}
+tbody tr td button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}

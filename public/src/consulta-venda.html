@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar vendas</title>
+
+    <!-- <link rel="stylesheet" href="../styles/style.css"/> -->
+    <link rel="stylesheet" href="../styles/default.css"/>
+    <link rel="stylesheet" href="../styles/consultaVenda.css"/>
+
+    <script src="../scripts/fontawesome/all.min.js"></script>
+</head>
+<body>
+    <form>
+        <fieldset>
+                <div>
+                    <label for="inputCpf">CPF:</label><br/>
+                    <input type="text" id="inputCpf" class="border radius" maxlength="14" placeholder="Apenas números"/>
+                </div>
+
+                <div>
+                    <label for="inputName">Nome:</label><br/>
+                    <input type="text" id="inputName" class="border radius" maxlength="255" placeholder="Pesquisar pelo nome"/>
+                </div>
+
+                <div>
+                    <label for="dataInicial">Data Inicial</label><br/>
+                    <input type="date" id="dataInicial" class="border radius"/>
+                </div>
+
+                <div>
+                    <label for="dataFinal">Data Final</label><br/>
+                    <input type="date" id="dataFinal" class="border radius"/>
+                </div>
+
+                <div>
+                    <label for="vendedor">Vendedor:</label><br/>
+                    <input type="number" id="vendedor" min="1" max="99999" placeholder="Matrícula"/>
+                </div>
+
+                <div>
+                    <label for="Comanda">Comanda:</label><br/>
+                    <input type="number" id="Comanda" min="1" max="99999" placeholder="Número da comanda"/>
+                </div>
+        </fieldset>
+
+        <div id="btns">
+            <button type="reset" id="reset" title="Limpar formulário"><i class="fas fa-ban"></i>&nbsp;Limpar</button>
+            <button type="submit" id="submit" title="Pesquisar"><i class="fas fa-search"></i>&nbsp;Pesquisar</button>
+        </div>
+    </form>
+
+    <hr style="color: var(--blue);"/>
+
+    <table>
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>CPF</td>
+                <td>Nome do cliente</td>
+                <td>Vendedor</td>
+                <td>Comanda</td>
+                <td>Data</td>
+                <td>Valor R$</td>
+                <td>Status</td>
+                <td>Imprimir</td>
+                <td>Editar</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>0001</td>
+                <td>037.401.202-40</td>
+                <td>Joiaribe Guimarães Alves</td>
+                <td>79040 - Joiaribe Guimarães Alves</td>
+                <td>0201179040-3</td>
+                <td>02/02/2020</td>
+                <td>R$ 140,35</td>
+                <td>Aberto</td>
+                <td><button type="button" title="Imprimir comanda"><i class="fas fa-print"></i></button></td>
+                <td><button type="E" title="Editar venda"><i class="fas fa-pen"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="../scripts/consultaVenda.js"></script>
+</body>
+</html>

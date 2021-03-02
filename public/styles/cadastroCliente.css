@@ -32,6 +32,11 @@ form input:focus,
 form select:focus {
     background-color: var(--bgFocus);
 }
+form input#inputName,
+form input#inputLog,
+form input#inputBairro {
+    text-transform: capitalize;
+}
 form input[disabled="disabled"] {
     background-color: #eee;
 }
@@ -59,14 +64,9 @@ form fieldset div#locatition {
 }
 form fieldset div#address1 {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr 2fr 2fr;
     gap: .5rem;
     margin-bottom: .5rem;
-}
-form fieldset div#address2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .5rem;
 }
 
 #btns {
@@ -89,16 +89,17 @@ button[type="reset"] {
     margin-right: 1rem;
 }
 button[type="submit"] {
-    background-color: var(--green);
-    color: var(--white);
-    border: none;
+    background-color: var(--white);
+    color: var(--green);
+    border: 1px solid var(--green);
 }
 button[type="reset"]:hover {
     background-color: var(--danger);
     color: var(--white);
 }
 button[type="submit"]:hover {
-    transform: scale(1.1);
+    background-color: var(--green);
+    color: var(--white);
 }
 
 a {

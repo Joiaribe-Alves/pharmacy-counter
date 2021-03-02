@@ -13,22 +13,20 @@
 
 </head>
 <body>
+    <div id="bg-menu-open"></div>
     <header id="top">
         <div class="logo">logo</div>
         <button type="button" id="btn-menu" title="Configurações"><i class="fas fa-bars"></i></button>
     </header>
     <div id="menu" class="flex radius" style="display: none;">
-        <!-- <a href="#" id="btnNewCustomer" class="transition radius"><i class="fas fa-user-plus"></i> Cadastrar Cliente</a> -->
-        <button id="btnNewCustomer" class="transition radius"><i class="fas fa-user-plus"></i> Cadastrar Cliente</button>
-
-        <a href="#" class="transition radius"><i class="fas fa-search-dollar"></i> Consultar Vendas</a>
-        <a href="#" class="transition radius"><i class="fas fa-file-signature"></i> Consultar Receitas</a>
-        <a href="#" class="transition radius"><i class="fas fa-user-tie"></i> Painel Administrativo</a>
-        <!--<a href="#" class="transition radius">Tema</a>-->
+        <button type="button" id="btnNewCustomer"><i class="fas fa-user-plus"></i>&nbsp;Cadastrar Cliente</button>
+        <button type="button" id="btnVendas"><i class="fas fa-search-dollar"></i>&nbsp;Consultar Vendas</button>
+        <button type="button" id="btnReceitas"><i class="fas fa-file-signature"></i>&nbsp;Consultar Receitas</button>
+        <button type="button"><i class="fas fa-user-tie"></i>&nbsp;Painel Administrativo</button>
     </div>
 
     <header id="headerIframe">
-        <p><i class="fas fa-user-plus"></i>&nbsp;Cadastrar novo cliente</p>
+        <p id="titleIframe"></p>
 
         <button type="button" id="close" title="Fechar">X</button>
     </header>
@@ -52,22 +50,21 @@
     <!-- conteúdo principal -->
     <section id="content">
         <div id="imgProd">
-            <img src="./public/img/prodID1.jpg" alt="Imagem Indisponível" srcset="">
+            <div id="currentImg"></div>
         </div>
 
         <div id="product">
-            <div>
-                <h1>Lorem Ipsum</h1>
-                <p>lorem ipsum</p>
-                <p>lorem ipsum > lorem ipsum > lorem ipsum</p>
+            <div id="descProd">
+                <h1 id="nameProd">Lorem Ipsum</h1>
+                <p id="prinAtiv">lorem ipsum</p>
 
-                <div>
+                <div id="codesProd">
                     <p>Cód. Interno: <span>12345-6</span></p>
                     <p>Cód. Barras: <span>0000000000000</span></p>
                 </div>
             </div>
 
-            <div id="stock" style="border: 1px solid red;">
+            <div id="stock">
                 <p id="qtdStock">0</p>
                 <p>Estoque</p>
             </div>
@@ -83,8 +80,8 @@
                 <input type="number" id="off" placeholder="Desconto manual %"/>
                 <!-- <button>Aplicar desconto</button> -->
                 <button><i class="fas fa-shopping-basket"></i>&nbsp;Adicionar a cesta</button>
-                <button>Deixei de vender</button>
-                <button><i class="fas fa-file"></i>&nbsp;Acessar bula</button>
+                <button type="button"><i class="fas fa-ban"></i>&nbsp;Deixei de vender</button>
+                <button id="btnBula"><i class="fas fa-file"></i>&nbsp;Acessar bula</button>
             </div>
         </div>
     </section>
@@ -127,9 +124,11 @@
 
     <script>
         const headerIframe = document.querySelector("#headerIframe");
-        let iframe = document.getElementsByTagName("iframe")[0];
-        let btnNewCustomer = document.querySelector("#btnNewCustomer");
-        let teste = "teste"
+        const titleIframe = document.querySelector("#titleIframe");
+        const iframe = document.getElementsByTagName("iframe")[0];
+        const btnNewCustomer = document.querySelector("#btnNewCustomer");
+        const btnReceitas = document.querySelector("#btnReceitas");
+        const basket = document.querySelector("#basket");
         const close = document.querySelector("#close")
 
         btnNewCustomer.addEventListener("click", () => {
@@ -137,13 +136,39 @@
             iframe.setAttribute("src", "./public/src/cadastro-cliente.html");
             iframe.style.display = "block";
             headerIframe.style.display = "flex";
+            titleIframe.innerHTML = "<i class=\"fas fa-user-plus\"></i>&nbsp;Cadastrar novo cliente";
         });
+
+        btnVendas.addEventListener("click", () => {
+            
+            iframe.setAttribute("src", "./public/src/consulta-venda.html");
+            iframe.style.display = "block";
+            headerIframe.style.display = "flex";
+            titleIframe.innerHTML = "<i class=\"fas fa-search-plus\"></i>&nbsp;Consultar vendas";
+        });
+
+        btnReceitas.addEventListener("click", () => {
+            
+            iframe.setAttribute("src", "./public/src/consulta-receita.html");
+            iframe.style.display = "block";
+            headerIframe.style.display = "flex";
+            titleIframe.innerHTML = "<i class=\"fas fa-file-signature\"></i>&nbsp;Consultar receitas";
+        });
+
+        basket.addEventListener("click", () => {
+
+            iframe.setAttribute("src", "./public/src/cesta.html");
+            iframe.style.display = "block";
+            headerIframe.style.display = "flex";
+            titleIframe.innerHTML = "<i class=\"fas fa-shopping-basket\"></i>&nbsp;Cesta de compras";
+        })
 
         close.addEventListener("click", () => {
             headerIframe.style.display = "none";
             iframe.style.display = "none";
             iframe.removeAttribute("src");
         });
+
     </script>
 </body>
 </html>
